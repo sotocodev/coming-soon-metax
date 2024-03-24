@@ -1,0 +1,571 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+
+:root{
+    --imgDesktop-backgorund: url(../assets/imgs/MetaX_Landing_Desktop.png);
+    --imgMobile-backgorund: url(../assets/imgs/MetaX_Landing_Mobile.png);
+
+}
+/* Mobile First */
+
+/* MOBILE */
+@media (max-width: 540px)
+{
+    .main
+    {
+        background-image: var(--imgMobile-backgorund);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-origin: center;
+
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        padding: 1em;
+
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+    }
+    .main__head {
+        width: 40vw;
+        min-width: 36vmin;
+    }
+    .main__logo
+    {
+        width: 100%;
+    }
+    .seperador 
+    {
+        min-height: 30vmin;
+        height: 25vmax;
+    }
+    .main__descripcion
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main__titulo 
+    {
+        font-size: 7vmin;
+        text-transform: uppercase;
+        color: #fff;
+        letter-spacing: 0.2em;
+        font-family: "Montserrat - Light";
+    }
+    .main__marker
+    {
+        font-weight: 900;
+        letter-spacing: 0px;
+        font-family: "Montserrat - Bold";
+    }
+    .main__barra 
+    {
+        margin-top: 7vh;
+        border-radius: 100px;
+        width: 20vh;
+        padding: 0.2em;
+        background-color: #4d4d4d;
+        position: relative;
+        opacity: 0;
+    }
+    .main__barra_animate
+    {
+        animation: barraDeCargaConten 1.5s;
+        animation-duration: 1.5s;
+        animation-delay: 1s;
+        animation-direction: normal;
+        animation-iteration-count: normal;
+        animation-fill-mode: forwards;
+    }
+    .main__barra::after
+    {
+        content: "loading";
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        margin-top: 1vh;
+        color: white;
+        animation: loading 1s infinite;
+        font-family: "Montserrat - Light";
+        font-weight: 800;
+        font-size: 3.5vmin;
+    }
+    .main__longitud 
+    {
+        width: 50%;
+        height: 4vh;
+        border-radius: 100px;
+        background: linear-gradient(90deg, #55c0cc 20%, #7c69c1 60%, #2e548e 100%);
+        
+        animation-name: barraDeCarga;
+        animation-duration: 2s;
+        animation-iteration-count:normal;
+        animation-direction: normal;
+        animation-delay: 1.5s, 3s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        width: 0%;
+        overflow: hidden;
+        position: relative;
+    }
+    .main__longitud::after
+    {
+        content: "";
+        position: absolute;
+        box-shadow: 0px 0px 20px 5px #ffffff;
+        height: 100%;
+        left: -5%;
+        z-index: 10;
+        opacity: 0;
+        animation-name: barraDeCargaCors;
+        animation-duration: 2.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-delay: 3s;
+
+    }
+    .main__sociales 
+    {
+        margin-top: 20vh;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main__social 
+    {
+        width: 9vmin;
+        margin: 0.4em;
+    }
+    .main__copy 
+    {
+        font-size: 3vmin;
+        font-family: "Montserrat - Bold";
+        color: #4D4D4D;
+        margin-top: 0.5em;
+        text-transform: uppercase;
+    }
+
+    
+    .preloading{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 999;
+        background: linear-gradient(115deg, #55c0cc 40%, #7c69c1 57%, #55c0cc 100%, #877bb3 0%);
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 2s;
+    
+
+    }
+    .main__head_text_1
+    {
+        width: 70vw;
+    }
+    .preloading_cambio
+    {
+        transition: 2s;
+        transform: translateX(100vh);
+        visibility: hidden;
+    }
+}
+/* TABLET */
+@media (min-width: 541px) and (max-width: 850px)
+{
+    .main
+    {
+        background-image: var(--imgMobile-backgorund);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-origin: center;
+
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        padding: 4em;
+
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+    }
+    .main__head {
+        width: 43vw;
+        min-width: 23vmin;
+        max-width: 31vmax;
+        margin-bottom: 27vh;
+    }
+    .main__logo
+    {
+        width: 100%;
+    }
+    .seperador 
+    {
+        min-height: 3vmin;
+        height: 2vw;
+    }
+    .main__descripcion
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main__titulo 
+    {
+        font-size: 7vmin;
+        text-transform: uppercase;
+        color: #fff;
+        letter-spacing: 0.2em;
+        font-family: "Montserrat - Light";
+    }
+    .main__marker
+    {
+        font-weight: 900;
+        letter-spacing: 0px;
+        font-family: "Montserrat - Bold";
+    }
+    .main__barra 
+    {
+        margin-top: 7vh;
+        border-radius: 100px;
+        width: 20vh;
+        padding: 0.2em;
+        background-color: #4d4d4d;
+        position: relative;
+        opacity: 0;
+    }
+    .main__barra_animate
+    {
+        animation: barraDeCargaConten 1.5s;
+        animation-duration: 1.5s;
+        animation-delay: 1s;
+        animation-direction: normal;
+        animation-iteration-count: normal;
+        animation-fill-mode: forwards;
+    }
+    .main__barra::after
+    {
+        content: "loading";
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        margin-top: 1vh;
+        color: white;
+        animation: loading 1s infinite;
+        font-family: "Montserrat - Light";
+        font-weight: 800;
+        font-size: 3.5vmin;
+    }
+    .main__longitud 
+    {
+        width: 50%;
+        height: 4vh;
+        border-radius: 100px;
+        background: linear-gradient(90deg, #55c0cc 20%, #7c69c1 60%, #2e548e 100%);
+        
+        animation-name: barraDeCarga;
+        animation-duration: 2s;
+        animation-iteration-count:normal;
+        animation-direction: normal;
+        animation-delay: 1.5s, 3s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        width: 0%;
+        overflow: hidden;
+        position: relative;
+    }
+    .main__longitud::after
+    {
+        content: "";
+        position: absolute;
+        box-shadow: 0px 0px 20px 5px #ffffff;
+        height: 100%;
+        left: -5%;
+        z-index: 10;
+        opacity: 0;
+        animation-name: barraDeCargaCors;
+        animation-duration: 2.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-delay: 3s;
+
+    }
+    .main__sociales {
+        margin-top: 31vh;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main__social 
+    {
+        width: 9vmin;
+        margin: 0.4em;
+    }
+    .main__copy 
+    {
+        font-size: 3vmin;
+        font-family: "Montserrat - Bold";
+        color: #4D4D4D;
+        margin-top: 0.5em;
+        text-transform: uppercase;
+    }
+
+    
+    .preloading{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 999;
+        background: linear-gradient(115deg, #55c0cc 40%, #7c69c1 57%, #55c0cc 100%, #877bb3 0%);
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 2s;
+    
+
+    }
+    .main__head_text_1
+    {
+        width: 70vw;
+    }
+    .preloading_cambio
+    {
+        transition: 2s;
+        transform: translateX(100vh);
+        visibility: hidden;
+    }
+}
+/* DESKTOP */
+@media (min-width: 851px)
+{
+    .main 
+    {
+
+        background-image: var(--imgDesktop-backgorund);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        padding: 4em;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+    }
+    .main__head {
+        width: 40vw;
+        min-width: 30vmin;
+        max-width: 15vmax;
+        margin-bottom: 17vh;
+    }
+    .main__logo
+    {
+        width: 100%;
+    }
+    .seperador {
+        min-height: 2vmin;
+        height: 1vw;
+    }
+    .main__descripcion
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main__titulo {
+        font-size: 5vmin;
+        text-transform: uppercase;
+        color: #fff;
+        letter-spacing: 0.2em;
+        font-family: "Montserrat - Light";
+    }
+    .main__marker
+    {
+        font-weight: 900;
+        letter-spacing: 0px;
+        font-family: "Montserrat - Bold";
+    }
+    .main__barra 
+    {
+        margin-top: 7vh;
+        border-radius: 100px;
+        width: 20vh;
+        padding: 0.2em;
+        background-color: #4d4d4d;
+        position: relative;
+        opacity: 0;
+    }
+    .main__barra_animate
+    {
+        animation: barraDeCargaConten 1.5s;
+        animation-duration: 1.5s;
+        animation-delay: 1s;
+        animation-direction: normal;
+        animation-iteration-count: normal;
+        animation-fill-mode: forwards;
+    }
+    .main__barra::after
+    {
+        content: "loading";
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        margin-top: 1vh;
+        color: white;
+        animation: loading 1s infinite;
+        font-family: "Montserrat - Light";
+        font-weight: 800;
+        font-size: 1.5vmin;
+    }
+    .main__longitud 
+    {
+        width: 50%;
+        height: 4vh;
+        border-radius: 100px;
+        background: linear-gradient(90deg, #55c0cc 20%, #7c69c1 60%, #2e548e 100%);
+        
+        animation-name: barraDeCarga;
+        animation-duration: 2s;
+        animation-iteration-count:normal;
+        animation-direction: normal;
+        animation-delay: 1.5s, 3s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        width: 0%;
+        overflow: hidden;
+        position: relative;
+    }
+    .main__longitud::after
+    {
+        content: "";
+        position: absolute;
+        box-shadow: 0px 0px 20px 5px #ffffff;
+        height: 100%;
+        left: -5%;
+        z-index: 10;
+        opacity: 0;
+        animation-name: barraDeCargaCors;
+        animation-duration: 2.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-delay: 3s;
+
+    }
+    .main__sociales {
+        margin-top: 5vh;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main__social {
+        width: 5vmin;
+        margin: 0.4em;
+    }
+    .main__copy {
+        font-size: 1.5vmin;
+        font-family: "Montserrat - Bold";
+        color: #4D4D4D;
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        text-transform: uppercase;
+    }
+
+    
+    .preloading{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 999;
+        background: linear-gradient(115deg, #55c0cc 40%, #7c69c1 57%, #55c0cc 100%, #877bb3 0%);
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 2s;
+    
+
+    }
+    .main__head_text_1
+    {
+        width: 70vw;
+        margin-bottom: 0;
+    }
+    .preloading_cambio
+    {
+        transition: 2s;
+        transform: translateX(100%);
+        visibility: hidden;
+    }
+}
+/* Animations */
+@keyframes barraDeCargaCors{
+    from{
+
+    }
+    to{
+        opacity: 1;
+        left: 150%;
+    }
+}
+@keyframes loading{
+    0%   {
+        content: "loading.";
+
+    }
+    50%{
+        content: "loading..";
+    }
+    100% {
+        content: "loading...";
+
+    }
+}
+@keyframes barraDeCargaConten{
+    0%   {transform: translateY(-7vh); opacity: 0;}
+    100% {transform: translateY(0); opacity: 1;}
+}
+@keyframes barraDeCarga{
+    0%{
+        opacity: 0;
+        width: 0%;
+    }
+    100% {
+        opacity: 1;
+        width: 50%;
+    }
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Montserrat - Light';
+    src: url('../assets/fonts/Montserrat/Montserrat-Thin.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'Montserrat - Bold';
+    src: url('../assets/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
